@@ -63,7 +63,7 @@ export function DiagnosticCta({
             htmlTag="h2"
             colorHidden="rgba(255, 255, 255, 0.2)"
             colorRevealed="rgba(255, 255, 255, 1)"
-            className="display text-[14vw] leading-[0.82] md:text-[7vw]"
+            className="display text-[clamp(2.75rem,7vw,5.5rem)] leading-[0.85]"
             trigger="Scroll"
             offsetStart={85}
             offsetEnd={35}

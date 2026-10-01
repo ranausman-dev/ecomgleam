@@ -45,40 +45,48 @@ function Home() {
     <>
       <Preloader onComplete={() => setIsLoaded(true)} />
       {/* Hero */}
-      <section className="relative flex min-h-[100svh] items-start overflow-hidden pt-20 sm:pt-24 md:pt-12 pb-8 sm:pb-12 md:pb-12">
+      <section className="relative flex min-h-[100svh] flex-col justify-between overflow-hidden pt-20 sm:pt-24 md:pt-14 pb-6 sm:pb-8 md:pb-10">
         <img
           src={heroImg}
           alt=""
           width={1920}
           height={1088}
-          className="absolute inset-0 h-full w-full object-cover opacity-70"
+          className="absolute inset-0 h-full w-full object-cover opacity-70 pointer-events-none"
         />
         <div className="absolute inset-0 bg-black/40 md:bg-black/20 z-0 pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-black/60 z-0 pointer-events-none md:hidden" />
-        <div className="relative mx-auto w-full max-w-[1400px] px-4 sm:px-6 md:px-10 flex flex-col pointer-events-none">
+        <div
+          className="relative mx-auto w-full max-w-[1400px] px-4 sm:px-6 md:px-10 flex flex-col justify-between flex-1 min-h-[calc(100svh-6rem)] sm:min-h-[calc(100svh-7rem)] md:min-h-[calc(100svh-4.5rem)] pointer-events-none"
+          style={{ containerType: "inline-size" }}
+        >
 
-          <h1 className="relative z-10 display mt-0 text-[17vw] sm:text-[19vw] md:text-[21.5vw] leading-[1.0] w-full drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)] md:drop-shadow-none">
-            <span className="block w-full overflow-hidden pb-[4vw] sm:pb-[6vw]">
+          <h1
+            className="relative z-10 display mt-0 w-full leading-[1.0] drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)] md:drop-shadow-none"
+            style={{
+              fontSize: "clamp(2.75rem, min(18cqw, 18vw), 242px)",
+            }}
+          >
+            <span className="block w-full overflow-hidden pb-[1.25em]">
               <motion.span
                 initial={{ y: "-115%", opacity: 0 }}
                 animate={isLoaded ? { y: 0, opacity: 1 } : { y: "-115%", opacity: 0 }}
                 transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-                className="flex w-full justify-between"
+                className="flex w-full justify-between tracking-normal select-none"
               >
                 {[
-                  { char: "E", scale: 1.2 },
-                  { char: "C", scale: 1.4 },
-                  { char: "O", scale: 1.3 },
-                  { char: "M", scale: 1.2 },
-                  { char: "G", scale: 1.4 },
-                  { char: "L", scale: 1.0 },
-                  { char: "E", scale: 1.2 },
-                  { char: "A", scale: 1.4 },
-                  { char: "M", scale: 1.2 },
+                  { char: "E", scale: 1.85 },
+                  { char: "C", scale: 2.2 },
+                  { char: "O", scale: 2.05 },
+                  { char: "M", scale: 1.85 },
+                  { char: "G", scale: 2.2 },
+                  { char: "L", scale: 1.55 },
+                  { char: "E", scale: 1.85 },
+                  { char: "A", scale: 2.2 },
+                  { char: "M", scale: 1.85 },
                 ].map((item, idx) => (
                   <span
                     key={idx}
-                    className="inline-block"
+                    className="inline-block shrink-0"
                     style={{
                       transform: `scaleY(${item.scale})`,
                       transformOrigin: "top",
@@ -92,7 +100,7 @@ function Home() {
           </h1>
 
           {/* Description & Buttons with 3D Element in between on mobile */}
-          <div className="flex flex-col md:grid md:grid-cols-[1.25fr_0.75fr] gap-4 sm:gap-6 md:gap-16 items-start md:items-end w-full mt-3 sm:mt-6 md:mt-[16vh] pb-8 sm:pb-12">
+          <div className="flex flex-col md:grid md:grid-cols-[1.25fr_0.75fr] gap-4 sm:gap-6 md:gap-16 items-start md:items-end w-full mt-auto pt-3 sm:pt-6 md:pt-12 pb-4 sm:pb-6">
             {/* Left Column: Left-aligned description */}
             <div className="relative z-30 text-left pointer-events-auto max-w-xl">
               <motion.p
@@ -107,7 +115,7 @@ function Home() {
             </div>
 
             {/* Dedicated 3D Carousel Stage on Mobile */}
-            <div className="w-full h-[300px] sm:h-[360px] md:hidden relative pointer-events-none" />
+            <div className="w-full h-[260px] sm:h-[300px] md:hidden relative pointer-events-none" />
 
             {/* CTA Buttons: Rendered AFTER the 3D element on mobile */}
             <div className="relative z-40 pointer-events-auto w-full md:w-auto">

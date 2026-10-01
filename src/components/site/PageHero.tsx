@@ -24,7 +24,7 @@ export function PageHero({
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.05 }}
-          className="display mt-6 max-w-[18ch] text-[16vw] md:text-[9vw]"
+          className="display mt-6 max-w-[18ch] text-[clamp(2.75rem,8.5vw,7.5rem)]"
         >
           {title}
         </motion.h1>

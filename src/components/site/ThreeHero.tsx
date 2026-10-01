@@ -352,8 +352,8 @@ export function ThreeHero({ isLoaded = true }: ThreeHeroProps) {
         if (isMobile) {
           // --- MOBILE ONLY: Centered cleanly between description text and CTA buttons ---
           const targetCameraZ = isSmallMobile ? 26 : 26;
-          const targetEndY = isSmallMobile ? -13.2 : -12.8; // Centered under text and above buttons
-          const targetScale = isSmallMobile ? 0.82 : 0.88;
+          const targetEndY = isSmallMobile ? -15.6 : -15.2; // Centered under text and above buttons
+          const targetScale = isSmallMobile ? 0.82 : 0.86;
 
           camera.position.z = targetCameraZ;
           camera.position.y = -10;
@@ -364,20 +364,25 @@ export function ThreeHero({ isLoaded = true }: ThreeHeroProps) {
           const endY = targetEndY;
           group.position.y = THREE.MathUtils.lerp(startY, endY, ease);
 
-          group.rotation.z = 0.12; // Sleek subtle slant
+          group.rotation.z = 0; // Level and centered horizontally (no lopsided slant)
           const startTiltX = -0.3;
-          const baseTiltX = -0.04; // Eye-level view so cards show in front
+          const baseTiltX = -0.02; // Eye-level view so cards show in front
           group.rotation.x = THREE.MathUtils.lerp(startTiltX, baseTiltX, ease);
         } else {
-          // --- DESKTOP VIEW: Exactly as it was originally before mobile changes ---
+          // --- DESKTOP / TABLET VIEW ---
+          const height = window.innerHeight;
+          const aspect = width / height;
+          // Scale cards circle smoothly if viewport is narrow/tall (like tablet portrait) so it fits horizontally
+          const aspectMultiplier = aspect < 1.35 ? Math.max(0.78, aspect / 1.35) : 1;
+          const scale = endScale * aspectMultiplier;
+
           camera.position.z = 28;
           camera.position.y = -10;
 
-          const scale = endScale;
           group.scale.set(scale, scale, scale);
 
           const startY = -60;
-          const endY = -10;
+          const endY = -11; // Centered in open space between tall title and bottom controls
           group.position.y = THREE.MathUtils.lerp(startY, endY, ease);
 
           group.rotation.z = 0.35;

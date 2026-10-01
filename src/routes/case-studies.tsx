@@ -47,7 +47,7 @@ function CaseStudies() {
                 <span className="font-mono text-xs text-primary">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h2 className="display text-[9vw] leading-none md:text-[3.2vw]">{c.label}</h2>
+                <h2 className="display text-[clamp(1.75rem,3.2vw,3rem)] leading-none">{c.label}</h2>
                 <p className="col-span-2 text-sm text-muted-foreground md:col-span-1 md:text-base">
                   {c.body}
                 </p>

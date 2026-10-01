@@ -71,19 +71,16 @@ export function AboutHero() {
             >
               {/* City & Email */}
               <div className="flex flex-col space-y-0.5 font-sans font-medium">
-                <span className="text-white/95">Based In Los Angeles, California</span>
+                <span className="text-white/95">Headquartered in Lahore, Pakistan 🇵🇰</span>
                 <a
                   href="mailto:contact@ecomgleam.com"
                   className="text-white/80 hover:text-white transition-colors"
                 >
                   contact@ecomgleam.com
                 </a>
-                <a
-                  href="tel:2341096666"
-                  className="sm:hidden text-white/90 hover:text-white transition-colors pt-0.5"
-                >
-                  Call Us — (234) 109-6666
-                </a>
+                <span className="sm:hidden text-white/90 text-[11px] pt-0.5">
+                  A1, Street No 2, Sector A1, Lahore
+                </span>
               </div>
 
               {/* Vertical Divider with '+' sign (exact match to image) */}
@@ -92,11 +89,9 @@ export function AboutHero() {
                 <span className="text-sm font-light select-none text-white/70">+</span>
               </div>
 
-              {/* Phone */}
-              <div className="hidden sm:block font-sans font-medium text-white/95">
-                <a href="tel:2341096666" className="hover:text-white transition-colors">
-                  Call Us — (234) 109-6666
-                </a>
+              {/* Location Badge */}
+              <div className="hidden sm:block font-sans font-medium text-white/95 text-xs">
+                <span>Sector A1, Lahore, 54770, Pakistan</span>
               </div>
             </motion.div>
 

@@ -274,6 +274,7 @@ export function ServicesSection() {
                   <AnimatePresence initial={false}>
                     {isActive && (
                       <motion.div
+                        key={`service-details-${item.num}`}
                         initial={{ height: 0, opacity: 0, marginTop: 0 }}
                         animate={{ height: "auto", opacity: 1, marginTop: 18 }}
                         exit={{ height: 0, opacity: 0, marginTop: 0 }}

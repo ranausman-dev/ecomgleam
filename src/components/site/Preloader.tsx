@@ -27,9 +27,8 @@ function createWavePath(
   return d;
 }
 
-// Deep, dramatic wave curves (36px and 44px amplitude for high curviness)
+// Single clean wave curve with smooth curvature
 const FRONT_WAVE_PATH = createWavePath(360, 36, 3200, 800);
-const BACK_WAVE_PATH = createWavePath(280, 44, 3200, 800);
 
 export function Preloader({ onComplete }: PreloaderProps) {
   const [percent, setPercent] = useState(0);
@@ -170,23 +169,9 @@ export function Preloader({ onComplete }: PreloaderProps) {
                 Ecomgleam
               </text>
 
-              {/* 2. Liquid Wavy Water Fill (strictly clipped to the letters) */}
+              {/* 2. Liquid Wavy Water Fill (strictly clipped to the letters, single clean layer) */}
               <g clipPath="url(#ecomgleam-clip)">
-                {/* Back wave with depth & deep curvature */}
-                <g transform={`translate(0, ${waterY})`}>
-                  <motion.path
-                    d={BACK_WAVE_PATH}
-                    fill="rgba(255, 255, 255, 0.42)"
-                    animate={{ x: [-280, 0] }}
-                    transition={{
-                      repeat: Infinity,
-                      duration: 3.6,
-                      ease: "linear",
-                    }}
-                  />
-                </g>
-
-                {/* Front wave in pure solid white with high wave curvature */}
+                {/* Single liquid wave in pure solid white */}
                 <g transform={`translate(0, ${waterY})`}>
                   <motion.path
                     d={FRONT_WAVE_PATH}

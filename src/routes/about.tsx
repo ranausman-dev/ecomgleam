@@ -31,7 +31,7 @@ function About() {
         <div className="mx-auto grid max-w-[1400px] gap-10 px-5 md:grid-cols-2 md:px-10">
           <Reveal>
             <p className="eyebrow">The Ecosystem</p>
-            <h2 className="display mt-5 text-[11vw] leading-[0.85] md:text-[4.2vw]">
+            <h2 className="display mt-5 text-[clamp(2.5rem,4.2vw,4.5rem)] leading-[0.88]">
               Ecom Gleam & Patriotic Distributors
             </h2>
           </Reveal>

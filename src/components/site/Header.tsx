@@ -11,6 +11,7 @@ const nav = [
   { to: "/international-expansion", label: "Expansion" },
   // { to: "/case-studies", label: "Case Studies" },
   { to: "/about", label: "About" },
+  { to: "/contact", label: "Contact" },
 ];
 
 export function Header() {
@@ -34,7 +35,7 @@ export function Header() {
           <img src="/assets/images/logo.png" alt="Ecom Gleam" className="h-8 w-auto md:h-9" />
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex">
+        <nav className="hidden items-center gap-5 xl:gap-7 lg:flex">
           {nav.map((n) => (
             <Link
               key={n.to}
@@ -71,6 +72,7 @@ export function Header() {
       <AnimatePresence>
         {open && (
           <motion.div
+            key="mobile-nav-drawer"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -78,7 +80,7 @@ export function Header() {
             className="overflow-hidden border-t border-border bg-background lg:hidden max-h-[calc(100svh-5rem)] overflow-y-auto"
           >
             <div className="flex flex-col px-5 py-4">
-              {[...nav, { to: "/contact", label: "Contact" }].map((n) => (
+              {nav.map((n) => (
                 <Link
                   key={n.to}
                   to={n.to}

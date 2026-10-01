@@ -46,16 +46,19 @@ export function HowWeOperate() {
   // ScrollTrigger to trigger section entry animations
   useEffect(() => {
     if (!sectionRef.current) return;
-    const trigger = ScrollTrigger.create({
-      trigger: sectionRef.current,
-      start: "top 75%",
-      once: true,
-      onEnter: () => {
-        setSectionInView(true);
-      },
-    });
+    const ctx = gsap.context(() => {
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: "top 75%",
+        once: true,
+        onEnter: () => {
+          setSectionInView(true);
+        },
+      });
+    }, sectionRef);
+
     return () => {
-      trigger.kill();
+      ctx.revert();
     };
   }, []);
 
