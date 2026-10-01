@@ -15,6 +15,8 @@ import { Route as BrandProtectionRouteImport } from './routes/brand-protection'
 import { Route as BrandStrategyRouteImport } from './routes/brand-strategy'
 import { Route as CapabilitiesRouteImport } from './routes/capabilities'
 import { Route as CaseStudiesRouteImport } from './routes/case-studies'
+import { Route as CollaborationRouteImport } from './routes/collaboration'
+import { Route as CollobrationRouteImport } from './routes/collobration'
 import { Route as CommerceMarketplacesRouteImport } from './routes/commerce-marketplaces'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DistributionOmnichannelRouteImport } from './routes/distribution-omnichannel'
@@ -24,6 +26,9 @@ import { Route as InternationalExpansionRouteImport } from './routes/internation
 import { Route as PartnersRouteImport } from './routes/partners'
 import { Route as PerformanceCreativeRouteImport } from './routes/performance-creative'
 import { Route as ResearchIntelligenceRouteImport } from './routes/research-intelligence'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as TheWorkRouteImport } from './routes/the-work'
+import { Route as WorkRouteImport } from './routes/work'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -53,6 +58,16 @@ const CapabilitiesRoute = CapabilitiesRouteImport.update({
 const CaseStudiesRoute = CaseStudiesRouteImport.update({
   id: '/case-studies',
   path: '/case-studies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CollaborationRoute = CollaborationRouteImport.update({
+  id: '/collaboration',
+  path: '/collaboration',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CollobrationRoute = CollobrationRouteImport.update({
+  id: '/collobration',
+  path: '/collobration',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CommerceMarketplacesRoute = CommerceMarketplacesRouteImport.update({
@@ -100,6 +115,21 @@ const ResearchIntelligenceRoute = ResearchIntelligenceRouteImport.update({
   path: '/research-intelligence',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TheWorkRoute = TheWorkRouteImport.update({
+  id: '/the-work',
+  path: '/the-work',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkRoute = WorkRouteImport.update({
+  id: '/work',
+  path: '/work',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -108,6 +138,8 @@ export interface FileRoutesByFullPath {
   '/brand-strategy': typeof BrandStrategyRoute
   '/capabilities': typeof CapabilitiesRoute
   '/case-studies': typeof CaseStudiesRoute
+  '/collaboration': typeof CollaborationRoute
+  '/collobration': typeof CollobrationRoute
   '/commerce-marketplaces': typeof CommerceMarketplacesRoute
   '/contact': typeof ContactRoute
   '/distribution-omnichannel': typeof DistributionOmnichannelRoute
@@ -117,6 +149,9 @@ export interface FileRoutesByFullPath {
   '/partners': typeof PartnersRoute
   '/performance-creative': typeof PerformanceCreativeRoute
   '/research-intelligence': typeof ResearchIntelligenceRoute
+  '/services': typeof ServicesRoute
+  '/the-work': typeof TheWorkRoute
+  '/work': typeof WorkRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -125,6 +160,8 @@ export interface FileRoutesByTo {
   '/brand-strategy': typeof BrandStrategyRoute
   '/capabilities': typeof CapabilitiesRoute
   '/case-studies': typeof CaseStudiesRoute
+  '/collaboration': typeof CollaborationRoute
+  '/collobration': typeof CollobrationRoute
   '/commerce-marketplaces': typeof CommerceMarketplacesRoute
   '/contact': typeof ContactRoute
   '/distribution-omnichannel': typeof DistributionOmnichannelRoute
@@ -134,6 +171,9 @@ export interface FileRoutesByTo {
   '/partners': typeof PartnersRoute
   '/performance-creative': typeof PerformanceCreativeRoute
   '/research-intelligence': typeof ResearchIntelligenceRoute
+  '/services': typeof ServicesRoute
+  '/the-work': typeof TheWorkRoute
+  '/work': typeof WorkRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -143,6 +183,8 @@ export interface FileRoutesById {
   '/brand-strategy': typeof BrandStrategyRoute
   '/capabilities': typeof CapabilitiesRoute
   '/case-studies': typeof CaseStudiesRoute
+  '/collaboration': typeof CollaborationRoute
+  '/collobration': typeof CollobrationRoute
   '/commerce-marketplaces': typeof CommerceMarketplacesRoute
   '/contact': typeof ContactRoute
   '/distribution-omnichannel': typeof DistributionOmnichannelRoute
@@ -152,6 +194,9 @@ export interface FileRoutesById {
   '/partners': typeof PartnersRoute
   '/performance-creative': typeof PerformanceCreativeRoute
   '/research-intelligence': typeof ResearchIntelligenceRoute
+  '/services': typeof ServicesRoute
+  '/the-work': typeof TheWorkRoute
+  '/work': typeof WorkRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -162,6 +207,8 @@ export interface FileRouteTypes {
     | '/brand-strategy'
     | '/capabilities'
     | '/case-studies'
+    | '/collaboration'
+    | '/collobration'
     | '/commerce-marketplaces'
     | '/contact'
     | '/distribution-omnichannel'
@@ -171,6 +218,9 @@ export interface FileRouteTypes {
     | '/partners'
     | '/performance-creative'
     | '/research-intelligence'
+    | '/services'
+    | '/the-work'
+    | '/work'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -179,6 +229,8 @@ export interface FileRouteTypes {
     | '/brand-strategy'
     | '/capabilities'
     | '/case-studies'
+    | '/collaboration'
+    | '/collobration'
     | '/commerce-marketplaces'
     | '/contact'
     | '/distribution-omnichannel'
@@ -188,6 +240,9 @@ export interface FileRouteTypes {
     | '/partners'
     | '/performance-creative'
     | '/research-intelligence'
+    | '/services'
+    | '/the-work'
+    | '/work'
   id:
     | '__root__'
     | '/'
@@ -196,6 +251,8 @@ export interface FileRouteTypes {
     | '/brand-strategy'
     | '/capabilities'
     | '/case-studies'
+    | '/collaboration'
+    | '/collobration'
     | '/commerce-marketplaces'
     | '/contact'
     | '/distribution-omnichannel'
@@ -205,6 +262,9 @@ export interface FileRouteTypes {
     | '/partners'
     | '/performance-creative'
     | '/research-intelligence'
+    | '/services'
+    | '/the-work'
+    | '/work'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -214,6 +274,8 @@ export interface RootRouteChildren {
   BrandStrategyRoute: typeof BrandStrategyRoute
   CapabilitiesRoute: typeof CapabilitiesRoute
   CaseStudiesRoute: typeof CaseStudiesRoute
+  CollaborationRoute: typeof CollaborationRoute
+  CollobrationRoute: typeof CollobrationRoute
   CommerceMarketplacesRoute: typeof CommerceMarketplacesRoute
   ContactRoute: typeof ContactRoute
   DistributionOmnichannelRoute: typeof DistributionOmnichannelRoute
@@ -223,6 +285,9 @@ export interface RootRouteChildren {
   PartnersRoute: typeof PartnersRoute
   PerformanceCreativeRoute: typeof PerformanceCreativeRoute
   ResearchIntelligenceRoute: typeof ResearchIntelligenceRoute
+  ServicesRoute: typeof ServicesRoute
+  TheWorkRoute: typeof TheWorkRoute
+  WorkRoute: typeof WorkRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -267,6 +332,20 @@ declare module '@tanstack/react-router' {
       path: '/case-studies'
       fullPath: '/case-studies'
       preLoaderRoute: typeof CaseStudiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/collaboration': {
+      id: '/collaboration'
+      path: '/collaboration'
+      fullPath: '/collaboration'
+      preLoaderRoute: typeof CollaborationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/collobration': {
+      id: '/collobration'
+      path: '/collobration'
+      fullPath: '/collobration'
+      preLoaderRoute: typeof CollobrationRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/commerce-marketplaces': {
@@ -332,6 +411,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResearchIntelligenceRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/the-work': {
+      id: '/the-work'
+      path: '/the-work'
+      fullPath: '/the-work'
+      preLoaderRoute: typeof TheWorkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work': {
+      id: '/work'
+      path: '/work'
+      fullPath: '/work'
+      preLoaderRoute: typeof WorkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -342,6 +442,8 @@ const rootRouteChildren: RootRouteChildren = {
   BrandStrategyRoute: BrandStrategyRoute,
   CapabilitiesRoute: CapabilitiesRoute,
   CaseStudiesRoute: CaseStudiesRoute,
+  CollaborationRoute: CollaborationRoute,
+  CollobrationRoute: CollobrationRoute,
   CommerceMarketplacesRoute: CommerceMarketplacesRoute,
   ContactRoute: ContactRoute,
   DistributionOmnichannelRoute: DistributionOmnichannelRoute,
@@ -351,6 +453,9 @@ const rootRouteChildren: RootRouteChildren = {
   PartnersRoute: PartnersRoute,
   PerformanceCreativeRoute: PerformanceCreativeRoute,
   ResearchIntelligenceRoute: ResearchIntelligenceRoute,
+  ServicesRoute: ServicesRoute,
+  TheWorkRoute: TheWorkRoute,
+  WorkRoute: WorkRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
