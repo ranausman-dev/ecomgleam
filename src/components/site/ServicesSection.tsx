@@ -117,7 +117,7 @@ export function ServicesSection() {
   };
 
   return (
-    <section className="relative overflow-hidden border-b border-border bg-black py-20 md:py-32">
+    <section id="services" className="relative overflow-hidden border-b border-border bg-black py-20 md:py-32 scroll-mt-20">
       <div className="mx-auto max-w-[1400px] px-5 md:px-10">
         <motion.div
           className="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-16 lg:gap-24"

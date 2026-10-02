@@ -3,15 +3,18 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Button } from "@/components/ui/button";
 
-const nav = [
-  { to: "/capabilities", label: "Capabilities" },
-  { to: "/research-intelligence", label: "Research" },
-  { to: "/commerce-marketplaces", label: "Commerce" },
-  { to: "/brand-protection", label: "Channel Control" },
-  { to: "/international-expansion", label: "Expansion" },
-  // { to: "/case-studies", label: "Case Studies" },
+interface NavItem {
+  to: string;
+  hash?: string;
+  label: string;
+}
+
+const nav: NavItem[] = [
   { to: "/about", label: "About" },
-  { to: "/contact", label: "Contact" },
+  { to: "/work", label: "The Work" },
+  { to: "/collaboration", label: "Collaboration" },
+  { to: "/capabilities", label: "Services" },
+  { to: "/contact", label: "Contact Us" },
 ];
 
 export function Header() {
@@ -24,6 +27,20 @@ export function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, item: NavItem) => {
+    setOpen(false);
+    if (item.hash) {
+      if (window.location.pathname === "/") {
+        e.preventDefault();
+        const el = document.getElementById(item.hash);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+          window.history.pushState(null, "", `/#${item.hash}`);
+        }
+      }
+    }
+  };
 
   return (
     <header
@@ -38,8 +55,10 @@ export function Header() {
         <nav className="hidden items-center gap-5 xl:gap-7 lg:flex">
           {nav.map((n) => (
             <Link
-              key={n.to}
-              to={n.to}
+              key={n.label}
+              to={n.to as any}
+              hash={n.hash}
+              onClick={(e) => handleNavClick(e, n)}
               className="text-[0.78rem] uppercase tracking-[0.16em] text-muted-foreground transition-colors hover:text-foreground"
               activeProps={{ className: "text-primary" }}
             >
@@ -82,9 +101,10 @@ export function Header() {
             <div className="flex flex-col px-5 py-4">
               {nav.map((n) => (
                 <Link
-                  key={n.to}
-                  to={n.to}
-                  onClick={() => setOpen(false)}
+                  key={n.label}
+                  to={n.to as any}
+                  hash={n.hash}
+                  onClick={(e) => handleNavClick(e, n)}
                   className="border-b border-border/60 py-3 text-sm uppercase tracking-[0.16em] text-muted-foreground"
                 >
                   {n.label}

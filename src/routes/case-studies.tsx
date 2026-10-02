@@ -7,8 +7,8 @@ import { caseStudyLens, caseFilters } from "@/data/capabilities";
 
 export const Route = createFileRoute("/case-studies")({
   beforeLoad: () => {
-    // Hide Case Studies page for now
-    throw redirect({ to: "/" });
+    // Redirect to the dedicated Work page
+    throw redirect({ to: "/work" });
   },
   head: () =>
     meta(

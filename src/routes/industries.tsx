@@ -55,6 +55,7 @@ function Industries() {
         eyebrow="Industries"
         title="Categories With Real Channel Complexity"
         intro="Our model fits brands where growth depends on demand, pricing, channel control and distribution working together—not on a single ad account."
+        image="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=2000&q=85"
       />
       <section className="border-b border-border py-16 md:py-24">
         <div className="mx-auto grid max-w-[1400px] gap-4 px-5 md:grid-cols-2 md:px-10 lg:grid-cols-4">

@@ -22,7 +22,7 @@ export function AboutSection() {
   ];
 
   return (
-    <section className="relative border-b border-border bg-[var(--ink)] py-20 md:py-32 overflow-hidden">
+    <section id="about" className="relative border-b border-border bg-[var(--ink)] py-20 md:py-32 overflow-hidden scroll-mt-20">
       {/* Absolute center dividing line for desktop */}
       <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2 z-10">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full border border-border bg-[var(--ink)] flex items-center justify-center">

@@ -53,6 +53,7 @@ function Insights() {
         eyebrow="Insights"
         title="How We Think About Growth"
         intro="Working notes from research, channel governance, media and expansion engagements."
+        image="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=2000&q=85"
       />
       <section className="border-b border-border py-16 md:py-24">
         <div className="mx-auto max-w-[1400px] px-5 md:px-10">

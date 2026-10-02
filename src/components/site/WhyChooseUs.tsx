@@ -189,27 +189,37 @@ export function WhyChooseUs() {
 
               {/* Right Column (Dynamic Text Cycling with Motion transition) */}
               <div className="border-l-2 border-primary/40 pl-4 sm:pl-8 py-3 sm:py-4 flex flex-col justify-center min-h-[180px] sm:min-h-[220px]">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={activePillarIndex}
-                    initial={{ opacity: 0, y: 16 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -16 }}
-                    transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
-                  >
-                    <span className="font-mono text-xs text-primary tracking-[0.28em] block uppercase mb-3 sm:mb-4">
-                      // {pillars[activePillarIndex].num} {pillars[activePillarIndex].title}
-                    </span>
+                {(() => {
+                  const currentPillar = pillars[activePillarIndex] ?? {
+                    num: "01",
+                    title: "AI-Centered",
+                    description: "",
+                  };
 
-                    <h3 className="font-clash font-bold text-xl sm:text-2xl md:text-3xl text-zinc-950 uppercase tracking-wide">
-                      {pillars[activePillarIndex].title}
-                    </h3>
+                  return (
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={activePillarIndex}
+                        initial={{ opacity: 0, y: 16 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -16 }}
+                        transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+                      >
+                        <span className="font-mono text-xs text-primary tracking-[0.28em] block uppercase mb-3 sm:mb-4">
+                          // {currentPillar.num} {currentPillar.title}
+                        </span>
 
-                    <p className="mt-3 sm:mt-5 text-sm sm:text-base md:text-lg text-zinc-700 leading-relaxed font-sans max-w-xl min-h-[60px] sm:min-h-[80px]">
-                      {pillars[activePillarIndex].description}
-                    </p>
-                  </motion.div>
-                </AnimatePresence>
+                        <h3 className="font-clash font-bold text-xl sm:text-2xl md:text-3xl text-zinc-950 uppercase tracking-wide">
+                          {currentPillar.title}
+                        </h3>
+
+                        <p className="mt-3 sm:mt-5 text-sm sm:text-base md:text-lg text-zinc-700 leading-relaxed font-sans max-w-xl min-h-[60px] sm:min-h-[80px]">
+                          {currentPillar.description}
+                        </p>
+                      </motion.div>
+                    </AnimatePresence>
+                  );
+                })()}
 
                 {/* Interactive Pillar Indicators */}
                 <div className="flex items-center gap-2 mt-5 sm:mt-7">

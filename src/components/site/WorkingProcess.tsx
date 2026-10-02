@@ -172,7 +172,7 @@ export function WorkingProcess() {
   }, []);
 
   return (
-    <div className="w-full bg-black text-white relative">
+    <div id="collaboration" className="w-full bg-black text-white relative scroll-mt-20">
       {/* Section Header */}
       <div className="w-full max-w-[1440px] mx-auto px-5 sm:px-8 pt-16 pb-8">
         <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-4 md:gap-8">

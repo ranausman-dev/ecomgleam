@@ -13,6 +13,7 @@ import { HowWeOperate } from "@/components/site/HowWeOperate";
 import { PressRecognition } from "@/components/site/PressRecognition";
 import { TeamSection } from "@/components/site/TeamSection";
 import { Preloader } from "@/components/site/Preloader";
+import { DiagnosticCta } from "@/components/site/CapabilityDetail";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
@@ -147,6 +148,7 @@ function Home() {
       <WorkingProcess />
       <PressRecognition />
       <TeamSection />
+      <DiagnosticCta />
     </>
   );
 }

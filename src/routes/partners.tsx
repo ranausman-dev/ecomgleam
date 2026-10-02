@@ -47,6 +47,7 @@ function Partners() {
         eyebrow="Partners & Ecosystem"
         title="An Operating Ecosystem, Not A Vendor List"
         intro="Brands reach growth faster when intelligence, commerce, distribution and technology are coordinated inside one accountable model."
+        image="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=85"
       />
       <section className="border-b border-border py-16 md:py-24">
         <div className="mx-auto grid max-w-[1400px] gap-4 px-5 md:grid-cols-3 md:px-10">

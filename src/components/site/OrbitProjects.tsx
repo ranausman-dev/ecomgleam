@@ -212,8 +212,9 @@ export function OrbitProjects() {
 
   return (
     <section
+      id="the-work"
       ref={rootRef}
-      className="relative w-full bg-black border-b border-border"
+      className="relative w-full bg-black border-b border-border scroll-mt-20"
       style={{ height: "460vh" }}
     >
       <div

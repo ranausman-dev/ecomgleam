@@ -20,6 +20,7 @@ function CapabilitiesPage() {
         eyebrow="Capabilities"
         title="One Integrated Operating Model"
         intro="Ecom Gleam combines research intelligence, brand strategy, marketplace execution, performance media, creative systems, channel control and expansion into one operating model."
+        image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=85"
       />
       {capabilities.map((cap) => (
         <div key={cap.slug} id={cap.slug} className="scroll-mt-24">

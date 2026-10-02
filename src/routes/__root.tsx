@@ -184,8 +184,18 @@ function RootComponent() {
   const pathname = routerState.location.pathname;
 
   useEffect(() => {
-    // Reset window scroll to top instantly on every route change
-    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    // If a hash is present in the URL, scroll to it smoothly; otherwise scroll to top
+    if (window.location.hash) {
+      const targetId = window.location.hash.replace("#", "");
+      setTimeout(() => {
+        const el = document.getElementById(targetId);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    }
 
     // Clean up any stale ScrollTriggers that might have been left behind from a previous page
     if (typeof window !== "undefined") {
