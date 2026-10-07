@@ -187,7 +187,6 @@ export function WhyChooseUs() {
                 </p>
               </div>
 
-              {/* Right Column (Dynamic Text Cycling with Motion transition) */}
               <div className="border-l-2 border-primary/40 pl-4 sm:pl-8 py-3 sm:py-4 flex flex-col justify-center min-h-[180px] sm:min-h-[220px]">
                 {(() => {
                   const currentPillar = pillars[activePillarIndex] ?? {
@@ -229,11 +228,10 @@ export function WhyChooseUs() {
                       type="button"
                       onClick={() => setActivePillarIndex(idx)}
                       aria-label={`View pillar ${p.num} - ${p.title}`}
-                      className={`h-1.5 transition-all duration-300 rounded-full cursor-pointer ${
-                        activePillarIndex === idx
+                      className={`h-1.5 transition-all duration-300 rounded-full cursor-pointer ${activePillarIndex === idx
                           ? "w-8 bg-primary"
                           : "w-2.5 bg-zinc-300 hover:bg-zinc-400"
-                      }`}
+                        }`}
                     />
                   ))}
                 </div>
