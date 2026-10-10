@@ -159,9 +159,7 @@ export function WhyChooseUs() {
         <div className="mx-auto max-w-[1400px] w-full px-4 sm:px-6 md:px-10 z-20">
           {/* Unified White Card */}
           <div className="bg-[oklch(0.96_0.005_200)] text-zinc-950 p-6 sm:p-10 md:p-16 lg:p-20 shadow-2xl flex flex-col justify-between gap-10 sm:gap-16 md:gap-20">
-            {/* Top Half: Why Choose Us split section */}
             <div className="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8 sm:gap-12 lg:gap-24 items-center w-full">
-              {/* Left Column (Sticky Title) */}
               <div className="flex flex-col justify-center">
                 <span className="text-[0.6875rem] font-bold tracking-[0.28em] text-primary uppercase block">
                   // Why Choose Ecom Gleam
@@ -229,8 +227,8 @@ export function WhyChooseUs() {
                       onClick={() => setActivePillarIndex(idx)}
                       aria-label={`View pillar ${p.num} - ${p.title}`}
                       className={`h-1.5 transition-all duration-300 rounded-full cursor-pointer ${activePillarIndex === idx
-                          ? "w-8 bg-primary"
-                          : "w-2.5 bg-zinc-300 hover:bg-zinc-400"
+                        ? "w-8 bg-primary"
+                        : "w-2.5 bg-zinc-300 hover:bg-zinc-400"
                         }`}
                     />
                   ))}
